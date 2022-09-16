@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        when project is production mode then remove all saved dependency file
+    -->
+    <script src="./fordev/temp.tailwind.min.js"></script>
+    <script defer src="./fordev/temp.alpine.min.js"></script>
+    <script>
+         tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                             'fun': {
+                                '50': '#72FFCB',
+                                '100': '#56FFC1',
+                                '200': '#1EFFAC',
+                                '300': '#00E591',
+                                '400': '#00AD6D',
+                                '500': '#00754A',
+                                '600': '#005C3A',
+                                '700': '#00422A',
+                                '800': '#00291A',
+                                '900': '#000F09'
+                            },
+                        }
+                    }
+                }
+            }
+    </script>
+    <title>amazon</title>
+</head>
+<body>
+
+    <div>
+
+        <h1 class="text-2xl font-bold text-fun-500">hello</h1>
+    </div>
+    
+</body>
+</html>
