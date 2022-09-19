@@ -9,23 +9,18 @@
     -->
     <script src="./fordev/temp.tailwind.min.js"></script>
     <script defer src="./fordev/temp.alpine.min.js"></script>
+    <!--temporary config-->
     <script>
          tailwind.config = {
                 theme: {
                     extend: {
                         colors: {
-                             'fun': {
-                                '50': '#72FFCB',
-                                '100': '#56FFC1',
-                                '200': '#1EFFAC',
-                                '300': '#00E591',
-                                '400': '#00AD6D',
-                                '500': '#00754A',
-                                '600': '#005C3A',
-                                '700': '#00422A',
-                                '800': '#00291A',
-                                '900': '#000F09'
-                            },
+                            "primary":"#0B090A",
+                            "secondery":"#febd69",
+                            "third":"#232f3e",
+                            "tblack":"#0F1111",
+                            "tgray":"#565959",
+                            "thover":"#C7511F"
                         }
                     }
                 }
@@ -35,10 +30,83 @@
 </head>
 <body>
 
-    <div>
+    <header>
+        <div class="header-wrapper w-full px-5 bg-primary h-[60px] flex items-center">
+            <div class="flex space-x-8 items-center w-full">
+                <div>
+                    <img src="./images/logo.png" alt="logo">
+                </div>
+                <button type="button" >
+                    <div class="flex items-center">
+                        <span class="text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                    </span>
+                        <div class="flex flex-col">
+                            <span class="text-white text-xs leading-none">Deliver to</span>
+                            <span class="text-white text-sm leading-none font-bold">Bulgaria</span>
+                        </div>
+                    </div>
+                </button>
+                <div class="flex-1 bg-white h-[40px] rounded"></div>
+                <div>
+                    <a href="#">
+                        <span class="text-white text-xs">English</span>
+                        <div class="flex justify-center">
+                            <div class="flex space-x-2 items-center">
+                        <span>
+                        <img src="./images/us.png" alt="">
+                    </span>
+                                <span class="w-0 h-0 border-4  block border-b-transparent  border-l-transparent border-r-transparent border-t-[#a7acb2] border-b-0"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <span class="text-white text-xs leading-none">Hello, sign in</span>
+                        <div class="flex justify-center">
+                            <div class="flex space-x-2 items-center">
+                            <span class="text-sm font-bold text-white leading-none">
+                                Account & Lists
+                            </span>
+                                <span class="w-0 h-0 border-4  block border-b-transparent  border-l-transparent border-r-transparent border-t-[#a7acb2] border-b-0"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <span class="text-white text-xs leading-none">Returns</span>
+                        <div class="flex justify-center">
+                            <div class="flex space-x-2 items-center">
+                            <span class="text-sm font-bold text-white leading-none">
+                                & Orders
+                            </span>
+                                <span class="w-0 h-0 border-4  block border-b-transparent  border-l-transparent border-r-transparent border-t-[#a7acb2] border-b-0 hidden"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <div class="flex items-end">
+                        <span class="relative">
+                            <img src="./images/cart.png" alt="cart">
+                            <span class="text-sm font-bold text-white absolute left-[18px] -top-1 text-[#f08804]">0</span>
+                        </span>
+                            <span class="text-sm font-bold text-white">Cart</span>
 
-        <h1 class="text-2xl font-bold text-fun-500">hello</h1>
-    </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main></main>
+    <footer></footer>
     
 </body>
 </html>
