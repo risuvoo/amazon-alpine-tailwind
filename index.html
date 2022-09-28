@@ -44,7 +44,7 @@
   >
     <header>
       <div
-        class="header-wrapper w-full px-5 bg-primary h-[60px] flex items-center"
+        class="header-wrapper w-full px-5 bg-primary h-[60px] flex items-center relative z-30"
       >
         <div class="flex space-x-8 items-center w-full">
           <div>
@@ -94,6 +94,13 @@
                  this.active=value;
                  this.toggle();
                  },
+
+              },
+              search:{
+              suggestBox:false,
+              toggleBox:function(){
+              this.suggestBox=!this.suggestBox;
+              }
               }
 
              }"
@@ -137,12 +144,39 @@
                 </ul>
               </div>
             </div>
-            <div class="flex-1 h-full">
+            <div class="flex-1 h-full relative">
               <input
+                x-on:focus="search.toggleBox()"
                 type="text"
                 class="w-full h-full focus:outline-none text-tblack font-medium px-2 placeholder:text-sm"
                 placeholder="Search product ..."
               />
+              <template x-cloak x-if="search.suggestBox">
+                <div
+                  @click="search.toggleBox()"
+                  class="fixed w-full h-full left-0 top-0 z-10"
+                ></div>
+              </template>
+              <div
+                x-cloak
+                x-show="search.suggestBox"
+                class="w-full bg-white border border-[#DDD] absolute left-0 top-[40px] z-20 shadow-xl"
+              >
+                <ul>
+                  <template x-for="i in category.categories">
+                    <li
+                      class="text-md text-tblack pl-1 h-[40px] flex items-center hover:bg-[#eee] cursor-pointer font-medium px-3"
+                    >
+                      <a href="#"> Lorem </a>
+                    </li>
+                    <li
+                      class="text-md text-tblack pl-1 h-[40px] flex items-center hover:bg-[#eee] cursor-pointer font-medium px-3"
+                    >
+                      <a href="#"> Lorem </a>
+                    </li>
+                  </template>
+                </ul>
+              </div>
             </div>
             <div
               class="w-[50px] h-full bg-secondery hover:bg-[#F3A847] flex justify-center items-center cursor-pointer rounded-r"
