@@ -27,6 +27,11 @@
       };
     </script>
     <title>amazon</title>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
   </head>
   <body
     x-data="{
@@ -77,19 +82,61 @@
             </div>
           </button>
           <div
-            class="flex-1 bg-white h-[40px] rounded flex justify-between overflow-hidden"
+            x-data="{
+                category:{
+                 active:'All',
+                 open:false,
+                 toggle: function(){
+                 this.open =!this.open;
+                 },
+                 categories:['All Departments','Arts & Crafts'],
+                 selectCategory:function(value){
+                 this.active=value;
+                 this.toggle();
+                 },
+              }
+
+             }"
+            class="flex-1 bg-white h-[40px] rounded flex justify-between relative"
           >
-            <button
-              type="button"
-              class="h-full bg-[#f3f3f3] flex justify-center items-center"
-            >
-              <div class="flex items-center px-3">
-                <span class="text-tgray text-xs mr-1">All</span>
-                <span
-                  class="w-0 h-0 border-4 block border-b-transparent border-l-transparent border-r-transparent border-t-third border-b-0"
-                ></span>
+            <div>
+              <button
+                @click="category.toggle()"
+                type="button"
+                class="h-full bg-[#f3f3f3] flex justify-center items-center rounded-l cursor-pointer select-none"
+              >
+                <div class="flex items-center px-3">
+                  <span
+                    class="text-tgray text-xs mr-1"
+                    x-text="category.active"
+                  ></span>
+                  <span
+                    class="w-0 h-0 border-4 block border-b-transparent border-l-transparent border-r-transparent border-t-third border-b-0"
+                  ></span>
+                </div>
+              </button>
+              <template x-cloak x-if="category.open">
+                <div
+                  @click="category.toggle()"
+                  class="fixed w-full h-full left-0 top-0 z-10"
+                ></div>
+              </template>
+              <div
+                x-cloak
+                x-show="category.open"
+                class="w-[204px] h-[382px] bg-white rounded-lg shadow-xl absolute left-1 top-[38px] border border-[#DDD] overflow-y-scroll z-20"
+              >
+                <ul>
+                  <template x-for="i in category.categories">
+                    <li
+                      x-text="i"
+                      @click="category.selectCategory(i)"
+                      class="text-sm text-tblack pl-1 hover:bg-blue-500 hover:text-white cursor-pointer"
+                    ></li>
+                  </template>
+                </ul>
               </div>
-            </button>
+            </div>
             <div class="flex-1 h-full">
               <input
                 type="text"
@@ -98,7 +145,7 @@
               />
             </div>
             <div
-              class="w-[50px] h-full bg-secondery hover:bg-[#F3A847] flex justify-center items-center cursor-pointer"
+              class="w-[50px] h-full bg-secondery hover:bg-[#F3A847] flex justify-center items-center cursor-pointer rounded-r"
             >
               <span>
                 <svg
