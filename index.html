@@ -377,7 +377,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <div class="relative group py-2">
             <a href="#">
               <span class="text-white text-xs leading-none"
                 >Hello, sign in</span
@@ -393,6 +393,68 @@
                 </div>
               </div>
             </a>
+            <div
+              class="w-0 h-0 group-hover:block hidden border-[9px] border-b-white border-transparent absolute left-[105px] -bottom-[3px] z-30"
+            ></div>
+            <div
+              class="w-[500px] h-[387px] group-hover:block hidden bg-white border rounded shadow-xl border border-[#DDD] absolute -left-[240px] top-[55px] p-6"
+            >
+              <div class="flex flex-col items-center border-b pb-3 mb-3">
+                <a href="#">
+                  <div
+                    style="
+                      background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+                      border-color: #a88734 #9c7e31 #846a29;
+                      border-style: solid;
+                      border-width: 1px;
+                    "
+                    class="w-[197px] h-[33px] flex justify-center items-center rounded"
+                  >
+                    <span class="text-xs font-bold text-tblack">Sign in</span>
+                  </div>
+                </a>
+                <p class="text-[11px] font-medium text-tblack text-center">
+                  New customer?
+                  <a href="#" class="text-[#007185]">Start here.</a>
+                </p>
+              </div>
+              <div class="flex justify-between">
+                <div class="w-1/2">
+                  <h1 class="text-base text-tblack font-bold mb-2">
+                    Your Lists
+                  </h1>
+                  <ul class="flex flex-col space-y-2">
+                    <li
+                      class="text-[13px] text-tgray hover:text-[#e47911] hover:underline"
+                    >
+                      <a href="#">hello</a>
+                    </li>
+                    <li
+                      class="text-[13px] text-tgray hover:text-[#e47911] hover:underline"
+                    >
+                      <a href="#">hello</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="w-1/2 border-l pl-6">
+                  <h1 class="text-base text-tblack font-bold mb-2">
+                    Your Lists
+                  </h1>
+                  <ul class="flex flex-col space-y-2">
+                    <li
+                      class="text-[13px] text-tgray hover:text-[#e47911] hover:underline"
+                    >
+                      <a href="#">hello</a>
+                    </li>
+                    <li
+                      class="text-[13px] text-tgray hover:text-[#e47911] hover:underline"
+                    >
+                      <a href="#">hello</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
           <div>
             <a href="#">
@@ -471,27 +533,89 @@
                     <span class="text-thover font-medium"> "Nike"</span>
                   </p>
                 </div>
-                <div class="flex-1 flex justify-end">
-                  <button
-                    type="button"
-                    class="pl-[6px] pr-[20px] text-xs bg-[#F0F2F2] rounded-lg shadow border border-[#D5D9D9] font-medium text-tgray relative"
-                  >
-                    Sort By: Featured
-                    <span class="absolute right-0 top-0 text-tgray">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="20"
-                        height="20"
-                        class="fill-current"
+                <div
+                  x-data="{
+
+                open:true,
+                toggle:function(){
+                  this.open=!this.open;
+                },
+                value:'Feature',
+                  setValue:function(value){
+                  this.value=value;
+                  this.toggle();
+
+                  },
+                }"
+                  class="flex-1 flex justify-end"
+                >
+                  <div class="relative">
+                    <button
+                      @click="toggle()"
+                      type="button"
+                      class="pl-[6px] pr-[20px] text-xs bg-[#F0F2F2] rounded-lg shadow border border-[#D5D9D9] font-medium text-tgray relative"
+                    >
+                      Sort By: <span x-text="value"></span>
+                      <span class="absolute right-0 top-0 text-tgray">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="20"
+                          height="20"
+                          class="fill-current"
+                        >
+                          <path fill="none" d="M0 0h24v24H0z" />
+                          <path
+                            d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <template x-cloak x-if="open">
+                      <div
+                        @click="toggle()"
+                        class="w-full h-full fixed left-0 top-0 z-30"
+                      ></div>
+                    </template>
+                    <template x-cloak x-if="open">
+                      <div
+                        class="w-[168px] absolute z-40 h-[142px] bg-white border border-[#cdcdcd] rounded shadow-lg py-2"
                       >
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path
-                          d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
+                        <ul>
+                          <li
+                            @click="setValue('Feature')"
+                            class="pl-2 cursor-pointer text-md bg-[#EDFDFF] border-l border-[#007185]"
+                          >
+                            Featured
+                          </li>
+                          <li
+                            @click="setValue('suvo')"
+                            class="pl-2 cursor-pointer text-md hover:bg-[#F0F2F2]"
+                          >
+                            suvo
+                          </li>
+                          <li
+                            @click="setValue('Feature')"
+                            class="pl-2 cursor-pointer text-md hover:bg-[#F0F2F2]"
+                          >
+                            Featured
+                          </li>
+                          <li
+                            @click="setValue('Feature')"
+                            class="pl-2 cursor-pointer text-md hover:bg-[#F0F2F2]"
+                          >
+                            Featured
+                          </li>
+                          <li
+                            @click="setValue('Feature')"
+                            class="pl-2 cursor-pointer text-md hover:bg-[#F0F2F2]"
+                          >
+                            Featured
+                          </li>
+                        </ul>
+                      </div>
+                    </template>
+                  </div>
                 </div>
               </div>
             </div>
