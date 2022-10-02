@@ -47,6 +47,10 @@
   toggleCategory:function(){
   this.category=!this.category;
   },
+  feedback:false,
+  feedBackHandler:function(){
+  this.feedback=!this.feedback;
+  }
 
   }"
   >
@@ -214,6 +218,151 @@
         </div>
       </div>
     </div>
+    <template x-cloak x-if="feedback">
+      <div class="feedback-wrapper w-full">
+        <div
+          class="fixed left-0 top-0 flex justify-center items-center w-full h-screen z-40"
+        >
+          <div
+            @click="feedBackHandler()"
+            class="w-full h-full fixed left-0 top-0 bg-black bg-opacity-50"
+          ></div>
+          <div
+            class="w-[464px] h-[427px] bg-white relative z-40 rounded-lg overflow-hidden"
+          >
+            <div
+              class="w-full h-[60px] bg-[#F0F2F2] flex items-center justify-between px-6"
+            >
+              <h1 class="text-base text-tgray font-bold">Leave feedback</h1>
+              <span
+                @click="feedBackHandler()"
+                class="cursor-pointer text-tgray"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="pt-6 px-6">
+              <p class="text-tgray text-base font-bold mb-4">This ad is:</p>
+              <div class="mb-2.5">
+                <ul class="flex flex-col space-y-1">
+                  <li class="group">
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="id23"
+                        class="accent-[#1196AB] w-4 h-4"
+                      />
+                      <label
+                        for="id23"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        >Premium Brands</label
+                      >
+                    </div>
+                  </li>
+                  <li class="group">
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="id24"
+                        class="accent-[#1196AB] w-4 h-4"
+                      />
+                      <label
+                        for="id24"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        >Premium Brands</label
+                      >
+                    </div>
+                  </li>
+                  <li class="group">
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="id25"
+                        class="accent-[#1196AB] w-4 h-4"
+                      />
+                      <label
+                        for="id25"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        >Premium Brands</label
+                      >
+                    </div>
+                  </li>
+                  <li class="group">
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="id26"
+                        class="accent-[#1196AB] w-4 h-4"
+                      />
+                      <label
+                        for="id26"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        >Premium Brands</label
+                      >
+                    </div>
+                  </li>
+                  <li class="group">
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="id27"
+                        class="accent-[#1196AB] w-4 h-4"
+                      />
+                      <label
+                        for="id27"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        >Premium Brands</label
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <label
+                  for="feedback"
+                  class="text-tgray text-base font-bold mb-4 block mb-2"
+                  >Please tell us why (optional)</label
+                >
+                <textarea
+                  id="feedback"
+                  placeholder="Do not include personal or sensitive data"
+                  class="w-full h-[68px] focus:outline-none border border-[#888C8C] focus:ring-2 focus:ring-[#c8f3fa] rounded p-2"
+                ></textarea>
+                <span class="text-xs text-tgray">5000 characters left</span>
+              </div>
+              <div class="w-full flex justify-end">
+                <div class="flex space-x-2 items-center">
+                  <button
+                    @click="feedBackHandler()"
+                    type="type"
+                    class="w-[59px] h-[29px] rounded-lg text-sm border shadow-lg"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="type"
+                    class="w-[63px] h-[29px] rounded-lg text-sm border shadow-lg bg-[#FFEC8A] border-[#FFEC8A] text-gray-500"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
     <header>
       <div
         class="header-wrapper w-full px-5 bg-primary h-[60px] flex items-center relative z-30"
@@ -1033,7 +1182,9 @@
                         id="id1"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id1" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id1"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Premium Brands</label
                       >
                     </div>
@@ -1053,7 +1204,9 @@
                         id="id2"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id2" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id2"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Nike</label
                       >
                     </div>
@@ -1305,7 +1458,9 @@
                         id="id3"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id3" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id3"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >XX-Narrow</label
                       >
                     </div>
@@ -1317,7 +1472,9 @@
                         id="id4"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id4" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id4"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >X-Narrow</label
                       >
                     </div>
@@ -1329,7 +1486,9 @@
                         id="id5"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id5" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id5"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Narrow</label
                       >
                     </div>
@@ -1341,7 +1500,9 @@
                         id="id6"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id6" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id6"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Medium</label
                       >
                     </div>
@@ -1353,7 +1514,9 @@
                         id="id7"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id7" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id7"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Wide</label
                       >
                     </div>
@@ -1365,7 +1528,9 @@
                         id="id8"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id8" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id8"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >X-Wide</label
                       >
                     </div>
@@ -1377,7 +1542,9 @@
                         id="id9"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id9" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id9"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >XX-Wide</label
                       >
                     </div>
@@ -1459,7 +1626,9 @@
                         id="id10"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id10" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id10"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Amazon Global Store</label
                       >
                     </div>
@@ -1479,7 +1648,9 @@
                         id="id11"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id11" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id11"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Ever Onwards Store</label
                       >
                     </div>
@@ -1491,7 +1662,9 @@
                         id="id12"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id12" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id12"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >JMEGoods</label
                       >
                     </div>
@@ -1503,7 +1676,9 @@
                         id="id13"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id13" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id13"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Shop Skywalker</label
                       >
                     </div>
@@ -1515,7 +1690,9 @@
                         id="id14"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id14" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id14"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >CXI Apparels</label
                       >
                     </div>
@@ -1527,7 +1704,9 @@
                         id="id15"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id15" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id15"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >StealsN'Deals</label
                       >
                     </div>
@@ -1539,7 +1718,9 @@
                         id="id16"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id16" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id16"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >T&K Store</label
                       >
                     </div>
@@ -1551,7 +1732,9 @@
                         id="id17"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id17" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id17"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >throne</label
                       >
                     </div>
@@ -1563,7 +1746,9 @@
                         id="id18"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id18" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id18"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >ZenGoods</label
                       >
                     </div>
@@ -1575,7 +1760,9 @@
                         id="id19"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id19" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id19"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >PS Traders, LLC</label
                       >
                     </div>
@@ -1595,7 +1782,9 @@
                         id="id20"
                         class="accent-[#1196AB] w-4 h-4"
                       />
-                      <label for="id20" class="text-sm ml-1 text-tblack"
+                      <label
+                        for="id20"
+                        class="text-sm ml-1 text-tblack cursor-pointer"
                         >Include Out of Stock</label
                       >
                     </div>
@@ -1626,7 +1815,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -1650,6 +1841,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -1678,7 +1959,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -1702,6 +1985,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -1730,7 +2103,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -1754,6 +2129,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -1782,7 +2247,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -1806,6 +2273,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -1834,7 +2391,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -1858,6 +2417,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -1886,7 +2535,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -1910,6 +2561,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -1938,7 +2679,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -1962,6 +2705,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -1990,7 +2823,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -2014,6 +2849,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -2042,7 +2967,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -2066,6 +2993,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -2094,7 +3111,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -2118,6 +3137,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
+                      >
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -2146,7 +3255,9 @@
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
-                    <div class="flex items-center pt-1">
+                    <div
+                      class="inline-flex items-center py-1 group relative cursor-pointer"
+                    >
                       <div class="flex">
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starfull.png" alt="" />
@@ -2170,318 +3281,96 @@
                       <span class="text-sm text-[#007185] leading-none"
                         >18,858</span
                       >
-                    </div>
-                    <div class="flex items-center space-x-1 pt-2">
-                      <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
-                          >25</span
-                        >
-                        <span class="text-xs text-tblack">00</span>
-                      </div>
-                      <p class="text-sm text-tgray font-medium">
-                        ($4.17/Count)
-                      </p>
-                    </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
-                  </div>
-                </div>
-                <div class="item w-full rounded border border-[#f5f5f5]">
-                  <div
-                    class="w-full h-[300px] bg-[#F8F8F8] flex justify-center items-center overflow-hidden mb-2"
-                  >
-                    <img src="./images/product(37).jpg" alt="" />
-                  </div>
-                  <div class="details px-2 mb-2">
-                    <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
-                        NIKE Performance Cushion Crew Socks with Band (6 Pairs)
-                      </p>
-                    </a>
-                    <div class="flex items-center pt-1">
-                      <div class="flex">
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starhalf.png" alt="" />
-                      </div>
-                      <span class="text-tgray">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          width="20"
-                          height="20"
-                          class="fill-current"
-                        >
-                          <path
-                            d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"
-                          />
-                        </svg>
-                      </span>
-                      <span class="text-sm text-[#007185] leading-none"
-                        >18,858</span
+                      <div
+                        class="w-[338px] h-[326px] group-hover:block hidden bg-white shadow-lg absolute -left-[70px] top-7 z-20 border border-[#cdcdcd] p-5"
                       >
-                    </div>
-                    <div class="flex items-center space-x-1 pt-2">
-                      <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
-                          >25</span
-                        >
-                        <span class="text-xs text-tblack">00</span>
+                        <div class="flex items-center space-x-2 mb-3">
+                          <div class="flex">
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starfull.png" alt="" />
+                            <img src="./images/starhalf.png" alt="" />
+                          </div>
+                          <span class="texr-lg text-tblack font-bold"
+                            >3 out of 5</span
+                          >
+                        </div>
+                        <p class="text-[#565959] text-sm mb-3">
+                          1 global rating
+                        </p>
+                        <div class="flex flex-col space-y-4 pb-4 border-b">
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 5 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 4 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 50%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 50%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 3 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 2 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                          <div class="flex justify-between items-center">
+                            <span class="text-[#007185] text-sm"> 1 star</span>
+                            <div
+                              class="w-[197px] h-5 bg-[#F0F2F2] overflow-hidden rounded border"
+                            >
+                              <div
+                                class="w-full h-full bg-[#FFA41C]"
+                                style="width: 0%"
+                              ></div>
+                            </div>
+                            <span class="text-[#007185] text-sm"> 0%</span>
+                          </div>
+                        </div>
+                        <div class="flex py-[14px] justify-center">
+                          <a href="#">
+                            <div
+                              class="flex text-[#007185] hover:underline hover:text-thover"
+                            >
+                              See all customer reviews
+                            </div>
+                          </a>
+                        </div>
                       </div>
-                      <p class="text-sm text-tgray font-medium">
-                        ($4.17/Count)
-                      </p>
-                    </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
-                  </div>
-                </div>
-                <div class="item w-full rounded border border-[#f5f5f5]">
-                  <div
-                    class="w-full h-[300px] bg-[#F8F8F8] flex justify-center items-center overflow-hidden mb-2"
-                  >
-                    <img src="./images/product(37).jpg" alt="" />
-                  </div>
-                  <div class="details px-2 mb-2">
-                    <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
-                        NIKE Performance Cushion Crew Socks with Band (6 Pairs)
-                      </p>
-                    </a>
-                    <div class="flex items-center pt-1">
-                      <div class="flex">
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starhalf.png" alt="" />
-                      </div>
-                      <span class="text-tgray">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          width="20"
-                          height="20"
-                          class="fill-current"
-                        >
-                          <path
-                            d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"
-                          />
-                        </svg>
-                      </span>
-                      <span class="text-sm text-[#007185] leading-none"
-                        >18,858</span
-                      >
-                    </div>
-                    <div class="flex items-center space-x-1 pt-2">
-                      <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
-                          >25</span
-                        >
-                        <span class="text-xs text-tblack">00</span>
-                      </div>
-                      <p class="text-sm text-tgray font-medium">
-                        ($4.17/Count)
-                      </p>
-                    </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
-                  </div>
-                </div>
-                <div class="item w-full rounded border border-[#f5f5f5]">
-                  <div
-                    class="w-full h-[300px] bg-[#F8F8F8] flex justify-center items-center overflow-hidden mb-2"
-                  >
-                    <img src="./images/product(37).jpg" alt="" />
-                  </div>
-                  <div class="details px-2 mb-2">
-                    <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
-                        NIKE Performance Cushion Crew Socks with Band (6 Pairs)
-                      </p>
-                    </a>
-                    <div class="flex items-center pt-1">
-                      <div class="flex">
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starhalf.png" alt="" />
-                      </div>
-                      <span class="text-tgray">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          width="20"
-                          height="20"
-                          class="fill-current"
-                        >
-                          <path
-                            d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"
-                          />
-                        </svg>
-                      </span>
-                      <span class="text-sm text-[#007185] leading-none"
-                        >18,858</span
-                      >
-                    </div>
-                    <div class="flex items-center space-x-1 pt-2">
-                      <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
-                          >25</span
-                        >
-                        <span class="text-xs text-tblack">00</span>
-                      </div>
-                      <p class="text-sm text-tgray font-medium">
-                        ($4.17/Count)
-                      </p>
-                    </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
-                  </div>
-                </div>
-                <div class="item w-full rounded border border-[#f5f5f5]">
-                  <div
-                    class="w-full h-[300px] bg-[#F8F8F8] flex justify-center items-center overflow-hidden mb-2"
-                  >
-                    <img src="./images/product(37).jpg" alt="" />
-                  </div>
-                  <div class="details px-2 mb-2">
-                    <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
-                        NIKE Performance Cushion Crew Socks with Band (6 Pairs)
-                      </p>
-                    </a>
-                    <div class="flex items-center pt-1">
-                      <div class="flex">
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starhalf.png" alt="" />
-                      </div>
-                      <span class="text-tgray">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          width="20"
-                          height="20"
-                          class="fill-current"
-                        >
-                          <path
-                            d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"
-                          />
-                        </svg>
-                      </span>
-                      <span class="text-sm text-[#007185] leading-none"
-                        >18,858</span
-                      >
-                    </div>
-                    <div class="flex items-center space-x-1 pt-2">
-                      <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
-                          >25</span
-                        >
-                        <span class="text-xs text-tblack">00</span>
-                      </div>
-                      <p class="text-sm text-tgray font-medium">
-                        ($4.17/Count)
-                      </p>
-                    </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
-                  </div>
-                </div>
-                <div class="item w-full rounded border border-[#f5f5f5]">
-                  <div
-                    class="w-full h-[300px] bg-[#F8F8F8] flex justify-center items-center overflow-hidden mb-2"
-                  >
-                    <img src="./images/product(37).jpg" alt="" />
-                  </div>
-                  <div class="details px-2 mb-2">
-                    <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
-                        NIKE Performance Cushion Crew Socks with Band (6 Pairs)
-                      </p>
-                    </a>
-                    <div class="flex items-center pt-1">
-                      <div class="flex">
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starhalf.png" alt="" />
-                      </div>
-                      <span class="text-tgray">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          width="20"
-                          height="20"
-                          class="fill-current"
-                        >
-                          <path
-                            d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"
-                          />
-                        </svg>
-                      </span>
-                      <span class="text-sm text-[#007185] leading-none"
-                        >18,858</span
-                      >
-                    </div>
-                    <div class="flex items-center space-x-1 pt-2">
-                      <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
-                          >25</span
-                        >
-                        <span class="text-xs text-tblack">00</span>
-                      </div>
-                      <p class="text-sm text-tgray font-medium">
-                        ($4.17/Count)
-                      </p>
-                    </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
-                  </div>
-                </div>
-                <div class="item w-full rounded border border-[#f5f5f5]">
-                  <div
-                    class="w-full h-[300px] bg-[#F8F8F8] flex justify-center items-center overflow-hidden mb-2"
-                  >
-                    <img src="./images/product(37).jpg" alt="" />
-                  </div>
-                  <div class="details px-2 mb-2">
-                    <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
-                        NIKE Performance Cushion Crew Socks with Band (6 Pairs)
-                      </p>
-                    </a>
-                    <div class="flex items-center pt-1">
-                      <div class="flex">
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starfull.png" alt="" />
-                        <img src="./images/starhalf.png" alt="" />
-                      </div>
-                      <span class="text-tgray">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          width="20"
-                          height="20"
-                          class="fill-current"
-                        >
-                          <path
-                            d="M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z"
-                          />
-                        </svg>
-                      </span>
-                      <span class="text-sm text-[#007185] leading-none"
-                        >18,858</span
-                      >
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
@@ -2581,6 +3470,7 @@
                     <div class="details flex-1 px-2 mt-5">
                       <div
                         class="space-x-1 items-center group cursor-pointer inline-flex"
+                        @click="feedBackHandler()"
                       >
                         <span class="text-[11px] text-tgray">Sponsored</span>
                         <span>
@@ -2710,7 +3600,7 @@
                   BRANDS RELATED TO YOUR SEARCH
                 </h1>
                 <div
-                  class="space-x-1 items-center group cursor-pointer inline-flex mb-4"
+                  class="space-x-1 items-center group cursor-pointer inline-flex @click=feedBackHandler()mb-4"
                 >
                   <span class="text-[11px] text-tgray">Sponsored</span>
                   <span>
@@ -2882,6 +3772,7 @@
                       <div class="flex justify-end mt-2">
                         <div
                           class="space-x-1 items-center group cursor-pointer inline-flex"
+                          @click="feedBackHandler()"
                         >
                           <span class="text-[11px] text-tgray">Sponsored</span>
                           <span>
