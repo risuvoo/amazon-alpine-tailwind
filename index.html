@@ -4,28 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--
-        when project is production mode then remove all saved dependency file
-    -->
-    <script src="./fordev/temp.tailwind.min.js"></script>
-    <script defer src="./fordev/temp.alpine.min.js"></script>
-    <!--temporary config-->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#131921",
-              secondery: "#febd69",
-              third: "#232f3e",
-              tblack: "#0F1111",
-              tgray: "#565959",
-              thover: "#C7511F",
-            },
-          },
-        },
-      };
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>amazon</title>
     <style>
       [x-cloak] {
@@ -116,11 +96,11 @@
           x-transition:leave="transition ease-in-out duration-300"
           x-transition:leave-start="left-0"
           x-transition:leave-end="-left-[400px]"
-          class="category-wrapper py-[30px] border-b border-gray fixed w-[365px] transition-all duration-300 ease-in-out"
+          class="category-wrapper fixed w-[365px] transition-all duration-300 ease-in-out"
         >
-          <ul class="category">
+          <ul class="category py-[30px] border-b border-gray">
             <li>
-              <span class="text-tblack font-bold text-lg px-[30px]"
+              <span class="text-[#0F1111] font-bold text-lg px-[30px]"
                 >Digital Content & Devices</span
               >
               <ul>
@@ -160,6 +140,99 @@
               </ul>
             </li>
           </ul>
+          <ul class="category py-[30px] border-b border-gray">
+            <li>
+              <span class="text-[#0F1111] font-bold text-lg px-[30px]"
+                >Digital Content & Devices</span
+              >
+              <ul>
+                <li
+                  @click="toggleCategory()"
+                  class="flex justify-between items-center py-[13px] cursor-pointer px-[30px] hover:bg-[#eaeded]"
+                >
+                  <a href="#" class="text-sm text-[#111111]"
+                    >Digital Content & Devices</a
+                  >
+                  <span>
+                    <img src="./images/arrow.png" alt="" />
+                  </span>
+                </li>
+                <li
+                  @click="toggleCategory()"
+                  class="flex justify-between items-center py-[13px] cursor-pointer px-[30px] hover:bg-[#eaeded]"
+                >
+                  <a href="#" class="text-sm text-[#111111]"
+                    >Digital Content & Devices</a
+                  >
+                  <span>
+                    <img src="./images/arrow.png" alt="" />
+                  </span>
+                </li>
+                <li
+                  @click="toggleCategory()"
+                  class="flex justify-between items-center py-[13px] cursor-pointer px-[30px] hover:bg-[#eaeded]"
+                >
+                  <a href="#" class="text-sm text-[#111111]"
+                    >Digital Content & Devices</a
+                  >
+                  <span>
+                    <img src="./images/arrow.png" alt="" />
+                  </span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="category py-[30px]">
+            <li>
+              <span class="text-[#0F1111] font-bold text-lg px-[30px]"
+                >Help & Settings</span
+              >
+              <ul>
+                <li
+                  class="flex justify-between items-center py-[13px] cursor-pointer px-[30px] hover:bg-[#eaeded]"
+                >
+                  <a href="#" class="text-sm text-[#111111]">Your account</a>
+                </li>
+                <li
+                  class="flex justify-between items-center py-[13px] cursor-pointer px-[30px] hover:bg-[#eaeded]"
+                >
+                  <div class="flex space-x-2 items-center">
+                    <img
+                      src="./images/world2.png"
+                      alt=""
+                      class="w-[14px] h-[14px]"
+                    />
+                    <span>English</span>
+                  </div>
+                </li>
+                <li
+                  class="flex justify-between items-center py-[13px] cursor-pointer px-[30px] hover:bg-[#eaeded]"
+                >
+                  <div class="flex space-x-2 items-center">
+                    <img
+                      src="./images/us.png"
+                      alt=""
+                      class="w-[14px] h-[14px]"
+                    />
+                    <span>United States</span>
+                  </div>
+                </li>
+                <li
+                  @click="toggleCategory()"
+                  class="flex justify-between items-center py-[13px] cursor-pointer px-[30px] hover:bg-[#eaeded]"
+                >
+                  <a href="#" class="text-sm text-[#111111]"
+                    >Customer Service</a
+                  >
+                </li>
+                <li
+                  class="flex justify-between items-center py-[13px] cursor-pointer px-[30px] hover:bg-[#eaeded]"
+                >
+                  <a href="#" class="text-sm text-[#111111]">Sign in</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
         <div
           x-cloak
@@ -179,14 +252,14 @@
             <span>
               <img src="./images/arrow-2.png" alt="" />
             </span>
-            <span class="uppercase text-sm text-tblack font-bold"
+            <span class="uppercase text-sm text-[#0F1111] font-bold"
               >Main menu</span
             >
           </div>
           <div class="pt-[13px]">
             <ul class="category">
               <li>
-                <span class="text-tblack font-bold text-lg px-[30px]"
+                <span class="text-[#0F1111] font-bold text-lg px-[30px]"
                   >Digital Content & Devices</span
                 >
                 <ul>
@@ -233,10 +306,10 @@
             <div
               class="w-full h-[60px] bg-[#F0F2F2] flex items-center justify-between px-6"
             >
-              <h1 class="text-base text-tgray font-bold">Leave feedback</h1>
+              <h1 class="text-base text-[#565959] font-bold">Leave feedback</h1>
               <span
                 @click="feedBackHandler()"
-                class="cursor-pointer text-tgray"
+                class="cursor-pointer text-[#565959]"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -252,7 +325,7 @@
               </span>
             </div>
             <div class="pt-6 px-6">
-              <p class="text-tgray text-base font-bold mb-4">This ad is:</p>
+              <p class="text-[#565959] text-base font-bold mb-4">This ad is:</p>
               <div class="mb-2.5">
                 <ul class="flex flex-col space-y-1">
                   <li class="group">
@@ -264,7 +337,7 @@
                       />
                       <label
                         for="id23"
-                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                         >Premium Brands</label
                       >
                     </div>
@@ -278,7 +351,7 @@
                       />
                       <label
                         for="id24"
-                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                         >Premium Brands</label
                       >
                     </div>
@@ -292,7 +365,7 @@
                       />
                       <label
                         for="id25"
-                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                         >Premium Brands</label
                       >
                     </div>
@@ -306,7 +379,7 @@
                       />
                       <label
                         for="id26"
-                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                         >Premium Brands</label
                       >
                     </div>
@@ -320,7 +393,7 @@
                       />
                       <label
                         for="id27"
-                        class="text-sm ml-1 text-tblack cursor-pointer"
+                        class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                         >Premium Brands</label
                       >
                     </div>
@@ -330,7 +403,7 @@
               <div>
                 <label
                   for="feedback"
-                  class="text-tgray text-base font-bold mb-4 block mb-2"
+                  class="text-[#565959] text-base font-bold mb-4 block mb-2"
                   >Please tell us why (optional)</label
                 >
                 <textarea
@@ -338,7 +411,7 @@
                   placeholder="Do not include personal or sensitive data"
                   class="w-full h-[68px] focus:outline-none border border-[#888C8C] focus:ring-2 focus:ring-[#c8f3fa] rounded p-2"
                 ></textarea>
-                <span class="text-xs text-tgray">5000 characters left</span>
+                <span class="text-xs text-[#565959]">5000 characters left</span>
               </div>
               <div class="w-full flex justify-end">
                 <div class="flex space-x-2 items-center">
@@ -366,7 +439,7 @@
     <header>
       <div class="web-header xl:block hidden">
         <div
-          class="header-wrapper w-full px-5 bg-primary h-[60px] items-center relative z-30"
+          class="header-wrapper w-full px-5 bg-[#131921] h-[60px] items-center relative z-30"
         >
           <div class="flex space-x-8 items-center w-full">
             <div
@@ -443,11 +516,11 @@
                 >
                   <div class="flex items-center px-3">
                     <span
-                      class="text-tgray text-xs mr-1"
+                      class="text-[#565959] text-xs mr-1"
                       x-text="category.active"
                     ></span>
                     <span
-                      class="w-0 h-0 border-4 block border-b-transparent border-l-transparent border-r-transparent border-t-third border-b-0"
+                      class="w-0 h-0 border-4 block border-b-transparent border-l-transparent border-r-transparent border-t-[#232f3e] border-b-0"
                     ></span>
                   </div>
                 </button>
@@ -467,7 +540,7 @@
                       <li
                         x-text="i"
                         @click="category.selectCategory(i)"
-                        class="text-sm text-tblack pl-1 hover:bg-blue-500 hover:text-white cursor-pointer"
+                        class="text-sm text-[#0F1111] pl-1 hover:bg-blue-500 hover:text-white cursor-pointer"
                       ></li>
                     </template>
                   </ul>
@@ -477,7 +550,7 @@
                 <input
                   x-on:focus="search.toggleBox()"
                   type="text"
-                  class="w-full h-full focus:outline-none text-tblack font-medium px-2 placeholder:text-sm"
+                  class="w-full h-full focus:outline-none text-[#0F1111] font-medium px-2 placeholder:text-sm"
                   placeholder="Search product ..."
                 />
                 <template x-cloak x-if="search.suggestBox">
@@ -494,12 +567,12 @@
                   <ul>
                     <template x-for="i in category.categories">
                       <li
-                        class="text-md text-tblack pl-1 h-[40px] flex items-center hover:bg-[#eee] cursor-pointer font-medium px-3"
+                        class="text-md text-[#0F1111] pl-1 h-[40px] flex items-center hover:bg-[#eee] cursor-pointer font-medium px-3"
                       >
                         <a href="#"> Lorem </a>
                       </li>
                       <li
-                        class="text-md text-tblack pl-1 h-[40px] flex items-center hover:bg-[#eee] cursor-pointer font-medium px-3"
+                        class="text-md text-[#0F1111] pl-1 h-[40px] flex items-center hover:bg-[#eee] cursor-pointer font-medium px-3"
                       >
                         <a href="#"> Lorem </a>
                       </li>
@@ -508,7 +581,7 @@
                 </div>
               </div>
               <div
-                class="w-[50px] h-full bg-secondery hover:bg-[#F3A847] flex justify-center items-center cursor-pointer rounded-r"
+                class="w-[50px] h-full bg-[#febd69] hover:bg-[#F3A847] flex justify-center items-center cursor-pointer rounded-r"
               >
                 <span>
                   <svg
@@ -557,7 +630,7 @@
               >
                 <div class="pb-4 border-b border-gray-200">
                   <div class="flex items-center space-x-2 mb-3">
-                    <span class="text-xs font-medium text-tgray leading-none"
+                    <span class="text-xs font-medium text-[#565959] leading-none"
                       >Change language</span
                     >
                     <span class="text-[11px] text-[#007185] leading-none"
@@ -572,7 +645,7 @@
                         class="w-[8px] h-[8px] bg-[#E87326] rounded-full"
                       ></div>
                     </div>
-                    <span class="text-tblack text-xs leading-none"
+                    <span class="text-[#0F1111] text-xs leading-none"
                       >English - EN</span
                     >
                   </div>
@@ -590,7 +663,7 @@
                         ></div>
                       </div>
                       <span
-                        class="text-tblack hover:text-thover hover:underline text-xs leading-none"
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
                         >English - EN</span
                       >
                     </div> </a
@@ -604,7 +677,7 @@
                         ></div>
                       </div>
                       <span
-                        class="text-tblack hover:text-thover hover:underline text-xs leading-none"
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
                         >English - EN</span
                       >
                     </div> </a
@@ -618,7 +691,7 @@
                         ></div>
                       </div>
                       <span
-                        class="text-tblack hover:text-thover hover:underline text-xs leading-none"
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
                         >English - EN</span
                       >
                     </div> </a
@@ -632,7 +705,7 @@
                         ></div>
                       </div>
                       <span
-                        class="text-tblack hover:text-thover hover:underline text-xs leading-none"
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
                         >English - EN</span
                       >
                     </div> </a
@@ -646,7 +719,7 @@
                         ></div>
                       </div>
                       <span
-                        class="text-tblack hover:text-thover hover:underline text-xs leading-none"
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
                         >English - EN</span
                       >
                     </div> </a
@@ -660,7 +733,7 @@
                         ></div>
                       </div>
                       <span
-                        class="text-tblack hover:text-thover hover:underline text-xs leading-none"
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
                         >English - EN</span
                       >
                     </div> </a
@@ -674,7 +747,7 @@
                         ></div>
                       </div>
                       <span
-                        class="text-tblack hover:text-thover hover:underline text-xs leading-none"
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
                         >English - EN</span
                       >
                     </div>
@@ -682,7 +755,7 @@
                 </div>
                 <div class="mt-4 pb-4 border-b border-gray-200">
                   <div class="flex items-center space-x-2 mb-3">
-                    <span class="text-xs font-medium text-tgray leading-none"
+                    <span class="text-xs font-medium text-[#565959] leading-none"
                       >Change currency</span
                     >
                     <span class="text-[11px] text-[#007185] leading-none"
@@ -690,7 +763,7 @@
                     >
                   </div>
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-medium text-tgray leading-none"
+                    <span class="text-xs font-medium text-[#565959] leading-none"
                       >$ - USD - US Dollar
                     </span>
                     <button
@@ -703,7 +776,7 @@
                 </div>
                 <div class="mt-4 overflow-hidden items-center">
                   <img src="./images/us.png" alt="" class="float-left mr-2" />
-                  <p class="text-xs font-medium text-tgray leading-none">
+                  <p class="text-xs font-medium text-[#565959] leading-none">
                     You are shopping on <br />
                     Amazon.com
                   </p>
@@ -754,44 +827,44 @@
                       "
                       class="w-[197px] h-[33px] flex justify-center items-center rounded"
                     >
-                      <span class="text-xs font-bold text-tblack">Sign in</span>
+                      <span class="text-xs font-bold text-[#0F1111]">Sign in</span>
                     </div>
                   </a>
-                  <p class="text-[11px] font-medium text-tblack text-center">
+                  <p class="text-[11px] font-medium text-[#0F1111] text-center">
                     New customer?
                     <a href="#" class="text-[#007185]">Start here.</a>
                   </p>
                 </div>
                 <div class="flex justify-between">
                   <div class="w-1/2">
-                    <h1 class="text-base text-tblack font-bold mb-2">
+                    <h1 class="text-base text-[#0F1111] font-bold mb-2">
                       Your Lists
                     </h1>
                     <ul class="flex flex-col space-y-2">
                       <li
-                        class="text-[13px] text-tgray hover:text-[#e47911] hover:underline"
+                        class="text-[13px] text-[#565959] hover:text-[#e47911] hover:underline"
                       >
                         <a href="#">hello</a>
                       </li>
                       <li
-                        class="text-[13px] text-tgray hover:text-[#e47911] hover:underline"
+                        class="text-[13px] text-[#565959] hover:text-[#e47911] hover:underline"
                       >
                         <a href="#">hello</a>
                       </li>
                     </ul>
                   </div>
                   <div class="w-1/2 border-l pl-6">
-                    <h1 class="text-base text-tblack font-bold mb-2">
+                    <h1 class="text-base text-[#0F1111] font-bold mb-2">
                       Your Lists
                     </h1>
                     <ul class="flex flex-col space-y-2">
                       <li
-                        class="text-[13px] text-tgray hover:text-[#e47911] hover:underline"
+                        class="text-[13px] text-[#565959] hover:text-[#e47911] hover:underline"
                       >
                         <a href="#">hello</a>
                       </li>
                       <li
-                        class="text-[13px] text-tgray hover:text-[#e47911] hover:underline"
+                        class="text-[13px] text-[#565959] hover:text-[#e47911] hover:underline"
                       >
                         <a href="#">hello</a>
                       </li>
@@ -836,7 +909,7 @@
           </div>
         </div>
         <div
-          class="aditional-nav-wrapper w-full bg-third px-5 h-[40px] flex items-center"
+          class="aditional-nav-wrapper w-full bg-[#232f3e] px-5 h-[40px] flex items-center"
         >
           <div class="flex space-x-5 items-center">
             <div
@@ -965,12 +1038,12 @@
               <div class="flex-1 h-full relative">
                 <input
                   type="text"
-                  class="w-full h-full focus:outline-none text-tblack font-medium px-2 placeholder:text-sm"
+                  class="w-full h-full focus:outline-none text-[#0F1111] font-medium px-2 placeholder:text-sm"
                   placeholder="Search product ..."
                 />
               </div>
               <div
-                class="w-[50px] h-full bg-secondery hover:bg-[#F3A847] flex justify-center items-center rounded-lg cursor-pointer"
+                class="w-[50px] h-full bg-[#febd69] hover:bg-[#F3A847] flex justify-center items-center rounded-lg cursor-pointer"
               >
                 <span>
                   <svg
@@ -1024,7 +1097,7 @@
                 <div class="w-2/3">
                   <p class="text-sm">
                     1-48 of over 10,000 results for
-                    <span class="text-thover font-medium"> "Nike"</span>
+                    <span class="text-[#C7511F] font-medium"> "Nike"</span>
                   </p>
                 </div>
                 <div
@@ -1047,10 +1120,10 @@
                     <button
                       @click="toggle()"
                       type="button"
-                      class="pl-[6px] pr-[20px] text-xs bg-[#F0F2F2] rounded-lg shadow border border-[#D5D9D9] font-medium text-tgray relative"
+                      class="pl-[6px] pr-[20px] text-xs bg-[#F0F2F2] rounded-lg shadow border border-[#D5D9D9] font-medium text-[#565959] relative"
                     >
                       Sort By: <span x-text="value"></span>
-                      <span class="absolute right-0 top-0 text-tgray">
+                      <span class="absolute right-0 top-0 text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
@@ -1124,7 +1197,7 @@
               <div class="w-full h-full">
                 <!-- department -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-1 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-1 block"
                     >Department</span
                   >
                   <ul>
@@ -1142,18 +1215,18 @@
                             />
                           </svg>
                         </span>
-                        <span class="text-sm text-tblack">Any Department</span>
+                        <span class="text-sm text-[#0F1111]">Any Department</span>
                       </div>
                       <ul class="ml-4">
                         <li>
-                          <span class="text-sm text-tblack font-bold"
+                          <span class="text-sm text-[#0F1111] font-bold"
                             >Clothing, Shoes & Jewelry</span
                           >
                           <ul class="ml-6">
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Women's Fashion</span
                                 >
                               </a>
@@ -1161,7 +1234,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Men's Fashion</span
                                 >
                               </a>
@@ -1169,7 +1242,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Girls' Fashion</span
                                 >
                               </a>
@@ -1177,7 +1250,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Boys' Fashion</span
                                 >
                               </a>
@@ -1185,7 +1258,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Baby Clothing & Shoes</span
                                 >
                               </a>
@@ -1193,7 +1266,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Novelty & More</span
                                 >
                               </a>
@@ -1201,7 +1274,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Luggage & Travel Gear</span
                                 >
                               </a>
@@ -1209,7 +1282,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Uniforms, Work & Safety</span
                                 >
                               </a>
@@ -1217,7 +1290,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Costumes & Accessories</span
                                 >
                               </a>
@@ -1225,7 +1298,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Shoe, Jewelry & Watch Accessories</span
                                 >
                               </a>
@@ -1233,7 +1306,7 @@
                             <li>
                               <a href="#">
                                 <span
-                                  class="text-sm text-tblack hover:text-thover"
+                                  class="text-sm text-[#0F1111] hover:text-[#C7511F]"
                                   >Sport Specific Clothing</span
                                 >
                               </a>
@@ -1246,7 +1319,7 @@
                 </div>
                 <!-- customer review -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Customer Reviews</span
                   >
                   <ul class="flex flex-col space-y-1">
@@ -1268,7 +1341,7 @@
                           <img src="./images/starblank.png" alt="" />
                         </span>
                       </div>
-                      <span class="text-xs text-tblack group-hover:text-thover"
+                      <span class="text-xs text-[#0F1111] group-hover:text-[#C7511F]"
                         >& Up</span
                       >
                     </li>
@@ -1290,7 +1363,7 @@
                           <img src="./images/starblank.png" alt="" />
                         </span>
                       </div>
-                      <span class="text-xs text-tblack group-hover:text-thover"
+                      <span class="text-xs text-[#0F1111] group-hover:text-[#C7511F]"
                         >& Up</span
                       >
                     </li>
@@ -1312,7 +1385,7 @@
                           <img src="./images/starblank.png" alt="" />
                         </span>
                       </div>
-                      <span class="text-xs text-tblack group-hover:text-thover"
+                      <span class="text-xs text-[#0F1111] group-hover:text-[#C7511F]"
                         >& Up</span
                       >
                     </li>
@@ -1334,7 +1407,7 @@
                           <img src="./images/starblank.png" alt="" />
                         </span>
                       </div>
-                      <span class="text-xs text-tblack group-hover:text-thover"
+                      <span class="text-xs text-[#0F1111] group-hover:text-[#C7511F]"
                         >& Up</span
                       >
                     </li>
@@ -1342,7 +1415,7 @@
                 </div>
                 <!-- amazon fasion -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Amazon Fashion</span
                   >
                   <ul class="flex flex-col space-y-1">
@@ -1355,7 +1428,7 @@
                         />
                         <label
                           for="id1"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Premium Brands</label
                         >
                       </div>
@@ -1364,7 +1437,7 @@
                 </div>
                 <!-- brands -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Brand</span
                   >
                   <ul class="flex flex-col space-y-1">
@@ -1377,7 +1450,7 @@
                         />
                         <label
                           for="id2"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Nike</label
                         >
                       </div>
@@ -1386,14 +1459,14 @@
                 </div>
                 <!-- price -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >price</span
                   >
                   <ul class="mb-4">
                     <li class="leading-5">
                       <a
                         href="#"
-                        class="text-sm text-tblack hover:text-thover leading-none"
+                        class="text-sm text-[#0F1111] hover:text-[#C7511F] leading-none"
                       >
                         Up to $25
                       </a>
@@ -1401,7 +1474,7 @@
                     <li class="leading-5">
                       <a
                         href="#"
-                        class="text-sm text-tblack hover:text-thover leading-none"
+                        class="text-sm text-[#0F1111] hover:text-[#C7511F] leading-none"
                       >
                         $25 to $50
                       </a>
@@ -1409,7 +1482,7 @@
                     <li class="leading-5">
                       <a
                         href="#"
-                        class="text-sm text-tblack hover:text-thover leading-none"
+                        class="text-sm text-[#0F1111] hover:text-[#C7511F] leading-none"
                       >
                         $50 to $100
                       </a>
@@ -1417,7 +1490,7 @@
                     <li class="leading-5">
                       <a
                         href="#"
-                        class="text-sm text-tblack hover:text-thover leading-none"
+                        class="text-sm text-[#0F1111] hover:text-[#C7511F] leading-none"
                       >
                         $100 to $200
                       </a>
@@ -1425,7 +1498,7 @@
                     <li class="leading-5">
                       <a
                         href="#"
-                        class="text-sm text-tblack hover:text-thover leading-none"
+                        class="text-sm text-[#0F1111] hover:text-[#C7511F] leading-none"
                       >
                         $200 & above
                       </a>
@@ -1438,11 +1511,11 @@
                         <input
                           type="text"
                           placeholder="Min"
-                          class="w-[65px] h-[31px] rounded pl-[18px] border border-[#888C8C] focus:outline-none focus:ring-4 ring-[#c8f3fa] placeholder:text-tgray text-sm"
+                          class="w-[65px] h-[31px] rounded pl-[18px] border border-[#888C8C] focus:outline-none focus:ring-4 ring-[#c8f3fa] placeholder:text-[#565959] text-sm"
                           id="Min"
                         />
                         <span
-                          class="text-sm text-tblack absolute left-2 top-[6px]"
+                          class="text-sm text-[#0F1111] absolute left-2 top-[6px]"
                           >$</span
                         >
                       </div>
@@ -1451,11 +1524,11 @@
                         <input
                           type="text"
                           placeholder="Max"
-                          class="w-[65px] h-[31px] rounded pl-[18px] border border-[#888C8C] focus:outline-none focus:ring-4 ring-[#c8f3fa] placeholder:text-tgray text-sm"
+                          class="w-[65px] h-[31px] rounded pl-[18px] border border-[#888C8C] focus:outline-none focus:ring-4 ring-[#c8f3fa] placeholder:text-[#565959] text-sm"
                           id="Max"
                         />
                         <span
-                          class="text-sm text-tblack absolute left-2 top-[6px]"
+                          class="text-sm text-[#0F1111] absolute left-2 top-[6px]"
                           >$</span
                         >
                       </div>
@@ -1470,147 +1543,147 @@
                 </div>
                 <!-- shoe size -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Shoe Size</span
                   >
                   <div class="grid grid-cols-6 gap-[2px]">
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- diable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#EAECEC] text-tgray bg-[#F8F9F9]"
+                      class="rounded w-full h-[24px] border border-[#EAECEC] text-[#565959] bg-[#F8F9F9]"
                     >
                       4.5
                     </button>
                     <!-- diable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#EAECEC] text-tgray bg-[#F8F9F9]"
+                      class="rounded w-full h-[24px] border border-[#EAECEC] text-[#565959] bg-[#F8F9F9]"
                     >
                       4.5
                     </button>
                     <!-- diable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#EAECEC] text-tgray bg-[#F8F9F9]"
+                      class="rounded w-full h-[24px] border border-[#EAECEC] text-[#565959] bg-[#F8F9F9]"
                     >
                       4.5
                     </button>
                     <!-- diable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#EAECEC] text-tgray bg-[#F8F9F9]"
+                      class="rounded w-full h-[24px] border border-[#EAECEC] text-[#565959] bg-[#F8F9F9]"
                     >
                       4.5
                     </button>
                     <!-- diable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#EAECEC] text-tgray bg-[#F8F9F9]"
+                      class="rounded w-full h-[24px] border border-[#EAECEC] text-[#565959] bg-[#F8F9F9]"
                     >
                       4.5
                     </button>
                     <!-- diable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#EAECEC] text-tgray bg-[#F8F9F9]"
+                      class="rounded w-full h-[24px] border border-[#EAECEC] text-[#565959] bg-[#F8F9F9]"
                     >
                       4.5
                     </button>
                     <!-- diable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#EAECEC] text-tgray bg-[#F8F9F9]"
+                      class="rounded w-full h-[24px] border border-[#EAECEC] text-[#565959] bg-[#F8F9F9]"
                     >
                       4.5
                     </button>
                     <!-- diable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#EAECEC] text-tgray bg-[#F8F9F9]"
+                      class="rounded w-full h-[24px] border border-[#EAECEC] text-[#565959] bg-[#F8F9F9]"
                     >
                       4.5
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
                     <!-- enable -->
                     <button
                       type="button"
-                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-thover text-tblack hover:bg-[#F3F3F3]"
+                      class="rounded w-full h-[24px] border border-[#adb1b8] hover:text-[#C7511F] text-[#0F1111] hover:bg-[#F3F3F3]"
                     >
                       4
                     </button>
@@ -1618,7 +1691,7 @@
                 </div>
                 <!-- Shoe Width -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Shoe Width</span
                   >
                   <ul class="flex flex-col space-y-1">
@@ -1631,7 +1704,7 @@
                         />
                         <label
                           for="id3"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >XX-Narrow</label
                         >
                       </div>
@@ -1645,7 +1718,7 @@
                         />
                         <label
                           for="id4"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >X-Narrow</label
                         >
                       </div>
@@ -1659,7 +1732,7 @@
                         />
                         <label
                           for="id5"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Narrow</label
                         >
                       </div>
@@ -1673,7 +1746,7 @@
                         />
                         <label
                           for="id6"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Medium</label
                         >
                       </div>
@@ -1687,7 +1760,7 @@
                         />
                         <label
                           for="id7"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Wide</label
                         >
                       </div>
@@ -1701,7 +1774,7 @@
                         />
                         <label
                           for="id8"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >X-Wide</label
                         >
                       </div>
@@ -1715,7 +1788,7 @@
                         />
                         <label
                           for="id9"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >XX-Wide</label
                         >
                       </div>
@@ -1724,7 +1797,7 @@
                 </div>
                 <!-- Color -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Color</span
                   >
                   <div class="grid grid-cols-10 gap-[2px]">
@@ -1786,7 +1859,7 @@
                 </div>
                 <!-- Amazon Global Store -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Amazon Global Store</span
                   >
                   <ul class="flex flex-col space-y-1">
@@ -1799,7 +1872,7 @@
                         />
                         <label
                           for="id10"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Amazon Global Store</label
                         >
                       </div>
@@ -1808,7 +1881,7 @@
                 </div>
                 <!-- Seller -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Seller</span
                   >
                   <ul class="flex flex-col space-y-1">
@@ -1821,7 +1894,7 @@
                         />
                         <label
                           for="id11"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Ever Onwards Store</label
                         >
                       </div>
@@ -1835,7 +1908,7 @@
                         />
                         <label
                           for="id12"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >JMEGoods</label
                         >
                       </div>
@@ -1849,7 +1922,7 @@
                         />
                         <label
                           for="id13"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Shop Skywalker</label
                         >
                       </div>
@@ -1863,7 +1936,7 @@
                         />
                         <label
                           for="id14"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >CXI Apparels</label
                         >
                       </div>
@@ -1877,7 +1950,7 @@
                         />
                         <label
                           for="id15"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >StealsN'Deals</label
                         >
                       </div>
@@ -1891,7 +1964,7 @@
                         />
                         <label
                           for="id16"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >T&K Store</label
                         >
                       </div>
@@ -1905,7 +1978,7 @@
                         />
                         <label
                           for="id17"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >throne</label
                         >
                       </div>
@@ -1919,7 +1992,7 @@
                         />
                         <label
                           for="id18"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >ZenGoods</label
                         >
                       </div>
@@ -1933,7 +2006,7 @@
                         />
                         <label
                           for="id19"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >PS Traders, LLC</label
                         >
                       </div>
@@ -1942,7 +2015,7 @@
                 </div>
                 <!-- Availability -->
                 <div class="mb-4">
-                  <span class="text-sm text-tblack font-bold mb-2 block"
+                  <span class="text-sm text-[#0F1111] font-bold mb-2 block"
                     >Availability</span
                   >
                   <ul class="flex flex-col space-y-1">
@@ -1955,7 +2028,7 @@
                         />
                         <label
                           for="id20"
-                          class="text-sm ml-1 text-tblack cursor-pointer"
+                          class="text-sm ml-1 text-[#0F1111] cursor-pointer"
                           >Include Out of Stock</label
                         >
                       </div>
@@ -1964,7 +2037,22 @@
                 </div>
               </div>
               <div class="w-full flex justify-center my-10">
-                <div class="w-[161px] h-[600px] border border-[#ccc]">
+                <div class="w-[161px] h-[600px] border border-[#ccc] relative">
+                  <div
+                    class="z-20 dealbadge-container absolute left-0 top-0 shadow-sm1"
+                  >
+                    <div
+                      class="relative inline-block pl-[6px] pr-0.5 pt-[1px] pb-[1px] bg-orange-500"
+                    >
+                      <span
+                        class="absolute left-[0] top-[0] bottom-[0] right-[0] translate-x-[5px] skew-x-[-15deg] bg-orange-500"
+                      ></span
+                      ><span
+                        class="text-white text-[.85em] whitespace-nowrap relative left-[0] top-[0] bottom-[0] right-[0]"
+                        >Best Seller</span
+                      >
+                    </div>
+                  </div>
                   <div
                     class="w-full h-[440px] flex justify-center items-center"
                   >
@@ -1977,7 +2065,7 @@
                   <div class="w-full flex flex-col justify-center">
                     <a href="#">
                       <p
-                        class="text-sm text-tblack hover:text-thover text-center"
+                        class="text-sm text-[#0F1111] hover:text-[#C7511F] text-center"
                       >
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
@@ -1992,7 +2080,7 @@
                       </div>
 
                       <div>
-                        <span class="text-sm text-tblack leading-none"
+                        <span class="text-sm text-[#0F1111] leading-none"
                           >18,858</span
                         >
                       </div>
@@ -2040,8 +2128,8 @@
             <section class="flex-1">
               <!--              title area-->
               <div>
-                <h1 class="text-xl text-tblack uppercase">results</h1>
-                <p class="text-sm text-tgray">
+                <h1 class="text-xl text-[#0F1111] uppercase">results</h1>
+                <p class="text-sm text-[#565959]">
                   Price and other details may vary based on product size and
                   color.
                 </p>
@@ -2076,7 +2164,7 @@
                       class="space-x-1 items-center group cursor-pointer inline-flex"
                       @click="feedBackHandler()"
                     >
-                      <span class="text-[11px] text-tgray">Sponsored</span>
+                      <span class="text-[11px] text-[#565959]">Sponsored</span>
                       <span>
                         <img
                           src="./images/idea.png"
@@ -2091,7 +2179,7 @@
                       </span>
                     </div>
                     <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
+                      <p class="text-base text-[#0F1111] hover:text-[#C7511F]">
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
@@ -2105,7 +2193,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -2132,7 +2220,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -2204,7 +2292,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -2222,7 +2310,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -2249,7 +2337,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -2321,7 +2409,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -2331,17 +2419,17 @@
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
+                        <span class="text-xs text-[#0F1111]">$</span>
+                        <span class="text-[28px] leading-none text-[#0F1111]"
                           >25</span
                         >
-                        <span class="text-xs text-tblack">00</span>
+                        <span class="text-xs text-[#0F1111]">00</span>
                       </div>
-                      <p class="text-sm text-tgray font-medium">
+                      <p class="text-sm text-[#565959] font-medium">
                         ($4.17/Count)
                       </p>
                     </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
+                    <p class="text-xs text-[#0F1111]">Ships to Bulgaria</p>
                   </div>
                 </div>
                 <div class="item w-full rounded border border-[#f5f5f5]">
@@ -2370,7 +2458,7 @@
                       class="space-x-1 items-center group cursor-pointer inline-flex"
                       @click="feedBackHandler()"
                     >
-                      <span class="text-[11px] text-tgray">Sponsored</span>
+                      <span class="text-[11px] text-[#565959]">Sponsored</span>
                       <span>
                         <img
                           src="./images/idea.png"
@@ -2385,7 +2473,7 @@
                       </span>
                     </div>
                     <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
+                      <p class="text-base text-[#0F1111] hover:text-[#C7511F]">
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
@@ -2399,7 +2487,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -2426,7 +2514,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -2498,7 +2586,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -2516,7 +2604,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -2543,7 +2631,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -2615,7 +2703,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -2625,17 +2713,17 @@
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
+                        <span class="text-xs text-[#0F1111]">$</span>
+                        <span class="text-[28px] leading-none text-[#0F1111]"
                           >25</span
                         >
-                        <span class="text-xs text-tblack">00</span>
+                        <span class="text-xs text-[#0F1111]">00</span>
                       </div>
-                      <p class="text-sm text-tgray font-medium">
+                      <p class="text-sm text-[#565959] font-medium">
                         ($4.17/Count)
                       </p>
                     </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
+                    <p class="text-xs text-[#0F1111]">Ships to Bulgaria</p>
                   </div>
                 </div>
                 <div class="item w-full rounded border border-[#f5f5f5]">
@@ -2664,7 +2752,7 @@
                       class="space-x-1 items-center group cursor-pointer inline-flex"
                       @click="feedBackHandler()"
                     >
-                      <span class="text-[11px] text-tgray">Sponsored</span>
+                      <span class="text-[11px] text-[#565959]">Sponsored</span>
                       <span>
                         <img
                           src="./images/idea.png"
@@ -2679,7 +2767,7 @@
                       </span>
                     </div>
                     <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
+                      <p class="text-base text-[#0F1111] hover:text-[#C7511F]">
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
@@ -2693,7 +2781,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -2720,7 +2808,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -2792,7 +2880,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -2810,7 +2898,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -2837,7 +2925,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -2909,7 +2997,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -2919,17 +3007,17 @@
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
+                        <span class="text-xs text-[#0F1111]">$</span>
+                        <span class="text-[28px] leading-none text-[#0F1111]"
                           >25</span
                         >
-                        <span class="text-xs text-tblack">00</span>
+                        <span class="text-xs text-[#0F1111]">00</span>
                       </div>
-                      <p class="text-sm text-tgray font-medium">
+                      <p class="text-sm text-[#565959] font-medium">
                         ($4.17/Count)
                       </p>
                     </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
+                    <p class="text-xs text-[#0F1111]">Ships to Bulgaria</p>
                   </div>
                 </div>
                 <div class="item w-full rounded border border-[#f5f5f5]">
@@ -2958,7 +3046,7 @@
                       class="space-x-1 items-center group cursor-pointer inline-flex"
                       @click="feedBackHandler()"
                     >
-                      <span class="text-[11px] text-tgray">Sponsored</span>
+                      <span class="text-[11px] text-[#565959]">Sponsored</span>
                       <span>
                         <img
                           src="./images/idea.png"
@@ -2973,7 +3061,7 @@
                       </span>
                     </div>
                     <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
+                      <p class="text-base text-[#0F1111] hover:text-[#C7511F]">
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
@@ -2987,7 +3075,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -3014,7 +3102,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -3086,7 +3174,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -3104,7 +3192,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -3131,7 +3219,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -3203,7 +3291,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -3213,17 +3301,17 @@
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
+                        <span class="text-xs text-[#0F1111]">$</span>
+                        <span class="text-[28px] leading-none text-[#0F1111]"
                           >25</span
                         >
-                        <span class="text-xs text-tblack">00</span>
+                        <span class="text-xs text-[#0F1111]">00</span>
                       </div>
-                      <p class="text-sm text-tgray font-medium">
+                      <p class="text-sm text-[#565959] font-medium">
                         ($4.17/Count)
                       </p>
                     </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
+                    <p class="text-xs text-[#0F1111]">Ships to Bulgaria</p>
                   </div>
                 </div>
                 <div class="item w-full rounded border border-[#f5f5f5]">
@@ -3252,7 +3340,7 @@
                       class="space-x-1 items-center group cursor-pointer inline-flex"
                       @click="feedBackHandler()"
                     >
-                      <span class="text-[11px] text-tgray">Sponsored</span>
+                      <span class="text-[11px] text-[#565959]">Sponsored</span>
                       <span>
                         <img
                           src="./images/idea.png"
@@ -3267,7 +3355,7 @@
                       </span>
                     </div>
                     <a href="#">
-                      <p class="text-base text-tblack hover:text-thover">
+                      <p class="text-base text-[#0F1111] hover:text-[#C7511F]">
                         NIKE Performance Cushion Crew Socks with Band (6 Pairs)
                       </p>
                     </a>
@@ -3281,7 +3369,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -3308,7 +3396,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -3380,7 +3468,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -3398,7 +3486,7 @@
                         <img src="./images/starfull.png" alt="" />
                         <img src="./images/starhalf.png" alt="" />
                       </div>
-                      <span class="text-tgray">
+                      <span class="text-[#565959]">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -3425,7 +3513,7 @@
                             <img src="./images/starfull.png" alt="" />
                             <img src="./images/starhalf.png" alt="" />
                           </div>
-                          <span class="texr-lg text-tblack font-bold"
+                          <span class="texr-lg text-[#0F1111] font-bold"
                             >3 out of 5</span
                           >
                         </div>
@@ -3497,7 +3585,7 @@
                         <div class="flex py-[14px] justify-center">
                           <a href="#">
                             <div
-                              class="flex text-[#007185] hover:underline hover:text-thover"
+                              class="flex text-[#007185] hover:underline hover:text-[#C7511F]"
                             >
                               See all customer reviews
                             </div>
@@ -3507,17 +3595,17 @@
                     </div>
                     <div class="flex items-center space-x-1 pt-2">
                       <div class="flex">
-                        <span class="text-xs text-tblack">$</span>
-                        <span class="text-[28px] leading-none text-tblack"
+                        <span class="text-xs text-[#0F1111]">$</span>
+                        <span class="text-[28px] leading-none text-[#0F1111]"
                           >25</span
                         >
-                        <span class="text-xs text-tblack">00</span>
+                        <span class="text-xs text-[#0F1111]">00</span>
                       </div>
-                      <p class="text-sm text-tgray font-medium">
+                      <p class="text-sm text-[#565959] font-medium">
                         ($4.17/Count)
                       </p>
                     </div>
-                    <p class="text-xs text-tblack">Ships to Bulgaria</p>
+                    <p class="text-xs text-[#0F1111]">Ships to Bulgaria</p>
                   </div>
                 </div>
               </div>
@@ -3605,7 +3693,7 @@
                         class="space-x-1 items-center group cursor-pointer inline-flex"
                         @click="feedBackHandler()"
                       >
-                        <span class="text-[11px] text-tgray">Sponsored</span>
+                        <span class="text-[11px] text-[#565959]">Sponsored</span>
                         <span>
                           <img
                             src="./images/idea.png"
@@ -3621,7 +3709,7 @@
                       </div>
                       <a href="#">
                         <p
-                          class="text-base text-tblack hover:text-thover font-medium"
+                          class="text-base text-[#0F1111] hover:text-[#C7511F] font-medium"
                         >
                           NIKE Performance Cushion Crew Socks with Band (6
                           Pairs)
@@ -3635,7 +3723,7 @@
                           <img src="./images/starfull.png" alt="" />
                           <img src="./images/starhalf.png" alt="" />
                         </div>
-                        <span class="text-tgray">
+                        <span class="text-[#565959]">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
@@ -3654,17 +3742,17 @@
                       </div>
                       <div class="flex items-center space-x-1 pt-2">
                         <div class="flex">
-                          <span class="text-xs text-tblack">$</span>
-                          <span class="text-[28px] leading-none text-tblack"
+                          <span class="text-xs text-[#0F1111]">$</span>
+                          <span class="text-[28px] leading-none text-[#0F1111]"
                             >25</span
                           >
-                          <span class="text-xs text-tblack">00</span>
+                          <span class="text-xs text-[#0F1111]">00</span>
                         </div>
-                        <p class="text-sm text-tgray font-medium">
+                        <p class="text-sm text-[#565959] font-medium">
                           ($4.17/Count)
                         </p>
                       </div>
-                      <p class="text-xs text-tblack font-bold">
+                      <p class="text-xs text-[#0F1111] font-bold">
                         Prime Try Before You Buy
                       </p>
                     </div>
@@ -3681,37 +3769,37 @@
                   >
                     <button
                       type="button"
-                      class="w-full h-full text-tgray text-sm"
+                      class="w-full h-full text-[#565959] text-sm"
                     >
                       Previous
                     </button>
                   </div>
                   <div
-                    class="w-[48px] h-[48px] flex items-center justify-center px-3 border border-tblack cursor-pointer bg-[#F5F6F6]"
+                    class="w-[48px] h-[48px] flex items-center justify-center px-3 border border-[#0F1111] cursor-pointer bg-[#F5F6F6]"
                   >
-                    <button type="button" class="text-sm text-tblack">1</button>
+                    <button type="button" class="text-sm text-[#0F1111]">1</button>
                   </div>
                   <div
                     class="w-[48px] h-[48px] flex items-center justify-center px-3 border border-transparent cursor-pointer hover:bg-[#F5F6F6]"
                   >
-                    <button type="button" class="text-sm text-tblack">2</button>
+                    <button type="button" class="text-sm text-[#0F1111]">2</button>
                   </div>
                   <div
                     class="w-[48px] h-[48px] flex items-center justify-center px-3 border border-transparent cursor-pointer hover:bg-[#F5F6F6]"
                   >
-                    <button type="button" class="text-sm text-tblack">3</button>
+                    <button type="button" class="text-sm text-[#0F1111]">3</button>
                   </div>
                   <div
                     class="w-[48px] h-[48px] flex items-center justify-center px-3"
                   >
-                    <button type="button" class="text-sm text-tblack">
+                    <button type="button" class="text-sm text-[#0F1111]">
                       ...
                     </button>
                   </div>
                   <div
                     class="w-[48px] h-[48px] flex items-center justify-center px-3 border border-transparent cursor-pointer hover:bg-[#F5F6F6]"
                   >
-                    <button type="button" class="text-sm text-tblack">
+                    <button type="button" class="text-sm text-[#0F1111]">
                       267
                     </button>
                   </div>
@@ -3720,7 +3808,7 @@
                   >
                     <button
                       type="button"
-                      class="w-full h-full text-tgray text-sm"
+                      class="w-full h-full text-[#565959] text-sm"
                     >
                       Next
                     </button>
@@ -3729,14 +3817,14 @@
               </div>
               <!-- BRANDS RELATED TO YOUR SEARCH -->
               <div class="mb-7">
-                <h1 class="text-lg text-tblack font-medium">
+                <h1 class="text-lg text-[#0F1111] font-medium">
                   BRANDS RELATED TO YOUR SEARCH
                 </h1>
                 <div
                   @click="feedBackHandler()"
                   class="space-x-1 items-center group cursor-pointer inline-flex @click=feedBackHandler()mb-4"
                 >
-                  <span class="text-[11px] text-tgray">Sponsored</span>
+                  <span class="text-[11px] text-[#565959]">Sponsored</span>
                   <span>
                     <img
                       src="./images/idea.png"
@@ -3815,7 +3903,7 @@
               </div>
               <!-- NEED HELP? -->
               <div class="mb-10 lg:block hidden">
-                <h1 class="text-lg text-tblack font-medium">NEED HELP?</h1>
+                <h1 class="text-lg text-[#0F1111] font-medium">NEED HELP?</h1>
                 <p class="text-sm text-tback mt-1 mb-[50px]">
                   <a href="#" class="text-[#007185]">Visit the help section</a>
                   or <a href="#" class="text-[#007185]">contact us</a>
@@ -3852,7 +3940,7 @@
                           class="w-[546px] flex flex-col justify-center h-full"
                         >
                           <a href="#">
-                            <p class="text-sm text-tblack hover:text-thover">
+                            <p class="text-sm text-[#0F1111] hover:text-[#C7511F]">
                               NIKE Performance Cushion Crew Socks with Band (6
                               Pairs)
                             </p>
@@ -3867,7 +3955,7 @@
                             </div>
 
                             <div>
-                              <span class="text-sm text-tblack leading-none"
+                              <span class="text-sm text-[#0F1111] leading-none"
                                 >18,858</span
                               >
                             </div>
@@ -3908,7 +3996,7 @@
                           class="space-x-1 items-center group cursor-pointer inline-flex"
                           @click="feedBackHandler()"
                         >
-                          <span class="text-[11px] text-tgray">Sponsored</span>
+                          <span class="text-[11px] text-[#565959]">Sponsored</span>
                           <span>
                             <img
                               src="./images/idea.png"
@@ -3936,7 +4024,7 @@
         class="w-full h-[120px] flex justify-center items-center border-t border-b border-[#ddd]"
       >
         <div>
-          <p class="text-sm text-tblack text-center font-medium mb-[2px]">
+          <p class="text-sm text-[#0F1111] text-center font-medium mb-[2px]">
             See personalized recommendations
           </p>
           <a href="#">
@@ -3948,10 +4036,10 @@
               "
               class="w-[230px] h-[28px] flex justify-center items-center rounded"
             >
-              <span class="text-xs font-bold text-tblack">Sign in</span>
+              <span class="text-xs font-bold text-[#0F1111]">Sign in</span>
             </div>
           </a>
-          <p class="text-[11px] font-medium text-tblack text-center">
+          <p class="text-[11px] font-medium text-[#0F1111] text-center">
             New customer? <a href="#" class="text-[#007185]">Start here.</a>
           </p>
         </div>
@@ -3975,150 +4063,158 @@
             <div
               class="w-full h-full flex lg:flex-row flex-col space-y-5 lg:space-y-0 justify-evenly"
             >
-              <div>
+              <div
+                class="flex flex-col items-center lg:items-start justify-center"
+              >
                 <h1 class="text-base font-bold text-white mb-2">
                   Get to Know Us
                 </h1>
                 <ul class="flex flex-col space-y-0.5">
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
                 </ul>
               </div>
-              <div>
+              <div
+                class="flex flex-col items-center lg:items-start justify-center"
+              >
                 <h1 class="text-base font-bold text-white mb-2">
                   Get to Know Us
                 </h1>
                 <ul class="flex flex-col space-y-0.5">
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
                 </ul>
               </div>
-              <div>
+              <div
+                class="flex flex-col items-center lg:items-start justify-center"
+              >
                 <h1 class="text-base font-bold text-white mb-2">
                   Get to Know Us
                 </h1>
                 <ul class="flex flex-col space-y-0.5">
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
                 </ul>
               </div>
-              <div>
+              <div
+                class="flex flex-col items-center lg:items-start justify-center"
+              >
                 <h1 class="text-base font-bold text-white mb-2">
                   Get to Know Us
                 </h1>
                 <ul class="flex flex-col space-y-0.5">
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
-                  <li class="textt-sm text-white hover:underline">
+                  <li class="text-sm text-white hover:underline">
                     <a href="#">Careers </a>
                   </li>
                 </ul>
@@ -4127,31 +4223,168 @@
           </div>
         </div>
         <div
-          class="w-full sm:h-[110px] h-fit py-10 sm:py-0 bg-[#232F3E] sm:flex justify-center items-center px-2"
+          class="w-full sm:h-[110px] h-fit py-10 sm:py-0 bg-[#232F3E] flex sm:flex-row flex-col justify-center items-center px-2"
         >
-          <div class="mr-[80px] mb-5 sm:mb-0">
+          <div class="sm:mr-[80px] mb-5 sm:mb-0 flex justify-center">
             <!--            logo-->
             <img src="./images/logo-2.png" alt="" />
           </div>
           <div
             class="flex sm:flex-row flex-col space-y-1 sm:space-y-0 sm:space-x-1 sm:items-center"
           >
-            <button
-              type="button"
-              class="w-[116px] h-[34px] border border-[#848688] rounded text-white text-sm flex items-center pl-[8px] pr-[18px] py-[6px] relative"
-            >
-              <div class="flex space-x-2 items-center">
-                <img
-                  src="./images/world.png"
-                  alt=""
-                  class="w-[14px] h-[14px]"
-                />
-                <span>English</span>
+            <div class="flex justify-center sm:justify-start group relative">
+              <style>
+                .language-item:hover .lang-radio {
+                  display: block !important;
+                }
+              </style>
+              <button
+                type="button"
+                class="w-[116px] h-[34px] border border-[#848688] rounded text-white text-sm flex items-center pl-[8px] pr-[18px] py-[6px] relative"
+              >
+                <div class="flex space-x-2 items-center">
+                  <img
+                    src="./images/world.png"
+                    alt=""
+                    class="w-[14px] h-[14px]"
+                  />
+                  <span>English</span>
+                </div>
+                <span class="absolute right-2 top-2.5">
+                  <img src="./images/topBottomArrow.png" alt="" />
+                </span>
+              </button>
+              <div
+                class="w-0 h-0 border-[9px] border-b-white group-hover:block hidden border-transparent absolute right-[5px] -bottom-[2px] z-30"
+              ></div>
+              <div
+                class="w-[240px] group-hover:block hidden bg-white border rounded shadow-xl border border-[#DDD] absolute -left-0 top-[32px] p-4 z-10"
+              >
+                <div class="pb-4 border-b border-gray-200">
+                  <div class="flex items-center space-x-2 mb-3">
+                    <span class="text-xs font-medium text-[#565959] leading-none"
+                      >Change language</span
+                    >
+                    <span class="text-[11px] text-[#007185] leading-none"
+                      >Learn more</span
+                    >
+                  </div>
+                  <div class="flex space-x-3 items-center">
+                    <div
+                      class="w-[18px] h-[18px] rounded-full border border-gray-300 flex justify-center items-center"
+                    >
+                      <div
+                        class="w-[8px] h-[8px] bg-[#E87326] rounded-full"
+                      ></div>
+                    </div>
+                    <span class="text-[#0F1111] text-xs leading-none"
+                      >English - EN</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex-col space-y-2 mt-4 pb-4">
+                  <a href="#">
+                    <div class="language-item flex space-x-3 items-center">
+                      <div
+                        class="w-[18px] h-[18px] rounded-full border border-gray-300 flex justify-center items-center"
+                      >
+                        <div
+                          class="lang-radio w-[8px] h-[8px] bg-[#E87326] rounded-full hidden"
+                        ></div>
+                      </div>
+                      <span
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
+                        >English - EN</span
+                      >
+                    </div> </a
+                  ><a href="#">
+                    <div class="language-item flex space-x-3 items-center">
+                      <div
+                        class="w-[18px] h-[18px] rounded-full border border-gray-300 flex justify-center items-center"
+                      >
+                        <div
+                          class="lang-radio w-[8px] h-[8px] bg-[#E87326] rounded-full hidden"
+                        ></div>
+                      </div>
+                      <span
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
+                        >English - EN</span
+                      >
+                    </div> </a
+                  ><a href="#">
+                    <div class="language-item flex space-x-3 items-center">
+                      <div
+                        class="w-[18px] h-[18px] rounded-full border border-gray-300 flex justify-center items-center"
+                      >
+                        <div
+                          class="lang-radio w-[8px] h-[8px] bg-[#E87326] rounded-full hidden"
+                        ></div>
+                      </div>
+                      <span
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
+                        >English - EN</span
+                      >
+                    </div> </a
+                  ><a href="#">
+                    <div class="language-item flex space-x-3 items-center">
+                      <div
+                        class="w-[18px] h-[18px] rounded-full border border-gray-300 flex justify-center items-center"
+                      >
+                        <div
+                          class="lang-radio w-[8px] h-[8px] bg-[#E87326] rounded-full hidden"
+                        ></div>
+                      </div>
+                      <span
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
+                        >English - EN</span
+                      >
+                    </div> </a
+                  ><a href="#">
+                    <div class="language-item flex space-x-3 items-center">
+                      <div
+                        class="w-[18px] h-[18px] rounded-full border border-gray-300 flex justify-center items-center"
+                      >
+                        <div
+                          class="lang-radio w-[8px] h-[8px] bg-[#E87326] rounded-full hidden"
+                        ></div>
+                      </div>
+                      <span
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
+                        >English - EN</span
+                      >
+                    </div> </a
+                  ><a href="#">
+                    <div class="language-item flex space-x-3 items-center">
+                      <div
+                        class="w-[18px] h-[18px] rounded-full border border-gray-300 flex justify-center items-center"
+                      >
+                        <div
+                          class="lang-radio w-[8px] h-[8px] bg-[#E87326] rounded-full hidden"
+                        ></div>
+                      </div>
+                      <span
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
+                        >English - EN</span
+                      >
+                    </div> </a
+                  ><a href="#">
+                    <div class="language-item flex space-x-3 items-center">
+                      <div
+                        class="w-[18px] h-[18px] rounded-full border border-gray-300 flex justify-center items-center"
+                      >
+                        <div
+                          class="lang-radio w-[8px] h-[8px] bg-[#E87326] rounded-full hidden"
+                        ></div>
+                      </div>
+                      <span
+                        class="text-[#0F1111] hover:text-[#C7511F] hover:underline text-xs leading-none"
+                        >English - EN</span
+                      >
+                    </div>
+                  </a>
+                </div>
               </div>
-              <span class="absolute right-2 top-2.5">
-                <img src="./images/topBottomArrow.png" alt="" />
-              </span>
-            </button>
+            </div>
             <button
               type="button"
               class="w-[150px] h-[34px] border border-[#848688] rounded text-white text-sm flex items-center pl-[8px] pr-[18px] py-[6px] relative"
